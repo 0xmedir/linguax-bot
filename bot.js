@@ -146,8 +146,6 @@ bot.on("callback_query", async (query) => {
   bot.answerCallbackQuery(query.id);
 });
 
-bot.on("message", async (msg) => {
-  if (!msg.text || msg.text.startsWith("/")) return;
   const chatId = msg.chat.id;
   const s = getSettings(chatId);
   const thinking = await bot.sendMessage(chatId, "⏳ Translating...");
